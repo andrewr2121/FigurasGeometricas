@@ -13,7 +13,10 @@ public abstract class FiguraGeometrica {
 
     public FiguraGeometrica() {
     }
-    
+    /**
+     * Devuleve la superficie de la Figura Geometrica
+     * @return Valor double
+     */
     public abstract double Superficie ();
     
     

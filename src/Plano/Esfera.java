@@ -19,13 +19,19 @@ public class Esfera extends Figura3D{
      this.radio = radio;
      
      }
-     
+     /**
+      * Calcula la Superficie de la Esfera
+      * @return valor double  
+      */
      public double Superficie() {
         double superficie;
         superficie = (4*(Math.PI*(this.radio * this.radio)));
         return superficie;
         }
-     
+     /**
+      * Calcula el Volumen de la Esfera
+      * @return valor double
+      */
      public double Volumen(){
          double volumen;
          volumen = ((4*(Math.PI* Math.pow(this.radio, 3)))/3);

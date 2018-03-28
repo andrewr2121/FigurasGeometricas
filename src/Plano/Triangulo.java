@@ -18,6 +18,12 @@ public class Triangulo extends Figura2D {
     private float lado2;
     private float lado3;
     
+    /**
+     * Crea una objeto Triangulo con la posicion por defecto en las cordenadas (0,0)
+     * @param lado1 Valor del Lado 1 del Triangulo
+     * @param lado2 Valor del Lado 2 del Triangulo
+     * @param lado3 Valor dle Lado 3 del Triangulo
+     */
     public Triangulo (float lado1, float lado2, float lado3){
     super(0,0);
     this.lado1 = lado1;
@@ -25,6 +31,14 @@ public class Triangulo extends Figura2D {
     this.lado3 = lado3;
     }
     
+    /**
+     * Crea el objeto Triangulo en la posicion especificadas por los parametros
+     * @param lado1 Valor del Lado 1 del Triangulo
+     * @param lado2 Valor del Lado 1 del Triangulo
+     * @param lado3 Valor del Lado 1 del Triangulo
+     * @param x Parametro X para la posicion del triangulo
+     * @param y Parametro Y para la posicion del triangulo
+     */
     public Triangulo (float lado1, float lado2, float lado3, double x, double y){
         super(x,y);
         this.lado1 = lado1;
