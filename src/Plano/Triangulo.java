@@ -23,9 +23,14 @@ public class Triangulo extends Figura2D {
     this.lado1 = lado1;
     this.lado2 = lado2;
     this.lado3 = lado3;
-    
-    
     }
+    
+    public Triangulo (float lado1, float lado2, float lado3, double x, double y){
+        super(x,y);
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.lado3 = lado3;
+    } 
     
     
     public double Perimetro (){

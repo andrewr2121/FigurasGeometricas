@@ -12,20 +12,36 @@ import java.lang.Math;
  */
 public class Circulo extends Figura2D {
     
+
     private final int LADOS = 0;
-    private double radio;
-        
     
+    private double radio;
+/**
+ * 
+ * 
+ * @param radio  Radio del 
+ * 
+ */
     public Circulo (double radio){
         super(0,0);
         this.radio = radio;
     }
-    
+    /**
+     * 
+     * @param radio Radio dle circulo a crear.
+     * @param x valor que va a tomar x en la posicion del circulo
+     * @param y valor que va a tomar y en la posicion del circulo
+     */
+  
      public Circulo (double radio, double x, double y){
      super(x,y);
      this.radio = radio;
     }
-    
+   
+     /**
+      * Calcula el perimetro del Circulo en base al radio. 
+      *  @return Perimetro del Circulo 
+      */
     
     @Override
     public double Perimetro (){
@@ -33,12 +49,23 @@ public class Circulo extends Figura2D {
     perimetro= (2*Math.PI*this.getRadio());
     return perimetro;
     }
-    
+    /**
+     * Calcula la superficie del Circulo en base al radio.
+     * @return Superficie del Circulo
+     */
     public double Superficie(){
     double superficie;
     superficie = (Math.PI*(this.getRadio() * this.getRadio()));
     return superficie;
     }
+    
+    /**
+     * 
+     * @param a se pasa una posicion que no se utiliza pero permite utilizar el
+     *          mismo llamado indistinto de que Figuara2D lo utiliza.
+     * @return La distancia del centro del circulo al perimetro del mismo
+     *          utilizando el valor del radio del mismo.
+     */
     
     public double DistanciaPerimetro(Posicion2D a){
     return radio;
