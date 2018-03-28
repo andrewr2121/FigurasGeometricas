@@ -12,6 +12,10 @@ import java.lang.Math;
  */
 public class Posicion2D  {
     
+    private static final double limMinX = -1000;
+    private static final double limMinY = -1000;
+    private static final double limMaxX = 1000;
+    private static final double limMaxY = 1000;
     private double x;
     private double y;
 
@@ -22,10 +26,10 @@ public class Posicion2D  {
     }
 
     
-    public Posicion2D (double x, double y){
+    public Posicion2D (double x, double y) throws FueraDelPlanoExeption{
     
-     this.x=x;
-     this.y=y;
+     this.setX(x);
+     this.setY(y);
     
     }
     
@@ -62,7 +66,7 @@ public class Posicion2D  {
     /**
      * @param x the x to set
      */
-    public void setX(double x) {
+    public void setX(double x) throws FueraDelPlanoExeption {
         this.x = x;
     }
 
@@ -76,7 +80,7 @@ public class Posicion2D  {
     /**
      * @param y the y to set
      */
-    public void setY(double y) {
+    public void setY(double y)throws FueraDelPlanoExeption {
         this.y = y;
     }
    
