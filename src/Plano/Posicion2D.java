@@ -67,7 +67,12 @@ public class Posicion2D  {
      * @param x the x to set
      */
     public void setX(double x) throws FueraDelPlanoExeption {
+        if (x<=limMaxX && x>=limMinX){
         this.x = x;
+        }
+        else {
+          throw new FueraDelPlanoExeption("Ingrese un valor entre el limte maximo y minimo");  
+        }
     }
 
     /**
@@ -81,8 +86,13 @@ public class Posicion2D  {
      * @param y the y to set
      */
     public void setY(double y)throws FueraDelPlanoExeption {
+         if (y<=limMaxY && y>=limMinY){
         this.y = y;
+        }
+        else {
+          throw new FueraDelPlanoExeption("Ingrese un valor entre el limte maximo y minimo");  
+        }
     }
    
-    
+
 }

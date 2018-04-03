@@ -17,14 +17,14 @@ public class Rectangulo extends Figura2D {
     private double alto;
        
     
-    public Rectangulo(double ancho, double alto){
+    public Rectangulo(double ancho, double alto)throws FueraDelPlanoExeption{
     super(0,0);
     this.ancho = ancho;
     this.alto = alto;
     }
     
    
-    public Rectangulo(double ancho, double alto, double x, double y){
+    public Rectangulo(double ancho, double alto, double x, double y) throws FueraDelPlanoExeption {
     super(x,y);
     this.ancho = ancho;
     this.alto = alto;
@@ -49,25 +49,25 @@ public class Rectangulo extends Figura2D {
    }
    
    
-   public Posicion2D VerticeSupIzq (Rectangulo a){    
+   public Posicion2D VerticeSupIzq (Rectangulo a)throws FueraDelPlanoExeption{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteIzquierdo(a),a.LimiteSuperior(a));
      return vizsq;  
     }
    
-     public Posicion2D VerticeInfIzq (Rectangulo a){    
+     public Posicion2D VerticeInfIzq (Rectangulo a)throws FueraDelPlanoExeption{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteIzquierdo(a),a.LimiteInferior(a));
      return vizsq;  
     }
      
-     public Posicion2D VerticeSupDer (Rectangulo a){    
+     public Posicion2D VerticeSupDer (Rectangulo a)throws FueraDelPlanoExeption{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteDerecho(a),a.LimiteDerecho(a));
      return vizsq;  
     }
      
-     public Posicion2D VerticeInfDer (Rectangulo a){    
+     public Posicion2D VerticeInfDer (Rectangulo a)throws FueraDelPlanoExeption{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteDerecho(a),a.LimiteInferior(a));
      return vizsq;  

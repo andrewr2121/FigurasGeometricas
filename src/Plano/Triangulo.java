@@ -23,8 +23,9 @@ public class Triangulo extends Figura2D {
      * @param lado1 Valor del Lado 1 del Triangulo
      * @param lado2 Valor del Lado 2 del Triangulo
      * @param lado3 Valor dle Lado 3 del Triangulo
+     * @throws Plano.FueraDelPlanoExeption
      */
-    public Triangulo (float lado1, float lado2, float lado3){
+    public Triangulo (float lado1, float lado2, float lado3) throws FueraDelPlanoExeption{
     super(0,0);
     this.lado1 = lado1;
     this.lado2 = lado2;
@@ -38,8 +39,9 @@ public class Triangulo extends Figura2D {
      * @param lado3 Valor del Lado 1 del Triangulo
      * @param x Parametro X para la posicion del triangulo
      * @param y Parametro Y para la posicion del triangulo
+     * @throws Plano.FueraDelPlanoExeption
      */
-    public Triangulo (float lado1, float lado2, float lado3, double x, double y){
+    public Triangulo (float lado1, float lado2, float lado3, double x, double y)throws FueraDelPlanoExeption{
         super(x,y);
         this.lado1 = lado1;
         this.lado2 = lado2;

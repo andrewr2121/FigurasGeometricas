@@ -20,20 +20,22 @@ public class Circulo extends Figura2D {
  * 
  * 
  * @param radio  Radio del 
+     * @throws Plano.FueraDelPlanoExeption 
  * 
  */
-    public Circulo (double radio){
-        super(0,0);
-        this.radio = radio;
-    }
+    public Circulo (double radio) throws FueraDelPlanoExeption{
+            super(0,0);
+           this.radio = radio;
+     }
     /**
      * 
      * @param radio Radio dle circulo a crear.
      * @param x valor que va a tomar x en la posicion del circulo
      * @param y valor que va a tomar y en la posicion del circulo
+     * @throws Plano.FueraDelPlanoExeption
      */
   
-     public Circulo (double radio, double x, double y){
+     public Circulo (double radio, double x, double y) throws FueraDelPlanoExeption{
      super(x,y);
      this.radio = radio;
     }
