@@ -16,19 +16,34 @@ public class Rectangulo extends Figura2D {
     private double ancho;
     private double alto;
        
-    
-    public Rectangulo(double ancho, double alto)throws FueraDelPlanoExeption{
+    /**
+     *
+     * @param ancho
+     * @param alto
+     * @throws DimensionIncorrectaException
+     * @throws FueraDelPlanoExeption
+     */
+    public Rectangulo(double ancho, double alto) throws DimensionIncorrectaException, FueraDelPlanoExeption {
     super(0,0);
-    this.ancho = ancho;
-    this.alto = alto;
+    this.setAncho(ancho);
+    this.setAlto(alto);
     }
     
-   
-    public Rectangulo(double ancho, double alto, double x, double y) throws FueraDelPlanoExeption {
+    /**
+     *
+     * @param ancho
+     * @param alto
+     * @param x
+     * @param y
+     * @throws FueraDelPlanoExeption
+     * @throws DimensionIncorrectaException
+     */
+    public Rectangulo(double ancho, double alto, double x, double y) throws FueraDelPlanoExeption,DimensionIncorrectaException {
     super(x,y);
-    this.ancho = ancho;
-    this.alto = alto;
+    this.setAncho(ancho);
+    this.setAlto(alto);
     }
+    
     @Override
     public double Perimetro(){
     double perimetro;
@@ -126,9 +141,15 @@ public class Rectangulo extends Figura2D {
 
     /**
      * @param ancho the ancho to set
+     * @throws Plano.DimensionIncorrectaException
      */
-    public void setAncho(double ancho) {
-        this.ancho = ancho;
+    public void setAncho(double ancho)throws DimensionIncorrectaException {
+        if (ancho<=0){
+            this.ancho = ancho;
+        }
+        else{
+            throw new  DimensionIncorrectaException ("Ingrese un valor mayor a 0");
+        }
     }
 
     /**
@@ -140,9 +161,15 @@ public class Rectangulo extends Figura2D {
 
     /**
      * @param alto the alto to set
+     * @throws Plano.DimensionIncorrectaException
      */
-    public void setAlto(double alto) {
+    public void setAlto(double alto)throws DimensionIncorrectaException {
+        if(alto<=0){
         this.alto = alto;
+        }
+        else{
+             throw new DimensionIncorrectaException ("Ingrese un valor positivo");
+        }
     }
     
 }
