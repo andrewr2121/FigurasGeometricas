@@ -9,13 +9,13 @@ package Plano;
  *
  * @author Alumno
  */
-public class FueraDelPlanoExeption extends Exception {
+public class FueraDelPlanoException extends Exception {
 
     /**
      * Creates a new instance of <code>NewException</code> without detail
      * message.
      */
-    public FueraDelPlanoExeption() {
+    public FueraDelPlanoException() {
     }
 
     /**
@@ -24,7 +24,7 @@ public class FueraDelPlanoExeption extends Exception {
      *
      * @param msg the detail message.
      */
-    public FueraDelPlanoExeption(String msg) {
+    public FueraDelPlanoException(String msg) {
         super(msg);
     }
 }

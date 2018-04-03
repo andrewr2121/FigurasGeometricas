@@ -21,9 +21,9 @@ public class Rectangulo extends Figura2D {
      * @param ancho
      * @param alto
      * @throws DimensionIncorrectaException
-     * @throws FueraDelPlanoExeption
+     * @throws FueraDelPlanoException
      */
-    public Rectangulo(double ancho, double alto) throws DimensionIncorrectaException, FueraDelPlanoExeption {
+    public Rectangulo(double ancho, double alto) throws DimensionIncorrectaException, FueraDelPlanoException {
     super(0,0);
     this.setAncho(ancho);
     this.setAlto(alto);
@@ -35,10 +35,10 @@ public class Rectangulo extends Figura2D {
      * @param alto
      * @param x
      * @param y
-     * @throws FueraDelPlanoExeption
+     * @throws FueraDelPlanoException
      * @throws DimensionIncorrectaException
      */
-    public Rectangulo(double ancho, double alto, double x, double y) throws FueraDelPlanoExeption,DimensionIncorrectaException {
+    public Rectangulo(double ancho, double alto, double x, double y) throws FueraDelPlanoException,DimensionIncorrectaException {
     super(x,y);
     this.setAncho(ancho);
     this.setAlto(alto);
@@ -64,25 +64,25 @@ public class Rectangulo extends Figura2D {
    }
    
    
-   public Posicion2D VerticeSupIzq (Rectangulo a)throws FueraDelPlanoExeption{    
+   public Posicion2D VerticeSupIzq (Rectangulo a)throws FueraDelPlanoException{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteIzquierdo(a),a.LimiteSuperior(a));
      return vizsq;  
     }
    
-     public Posicion2D VerticeInfIzq (Rectangulo a)throws FueraDelPlanoExeption{    
+     public Posicion2D VerticeInfIzq (Rectangulo a)throws FueraDelPlanoException{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteIzquierdo(a),a.LimiteInferior(a));
      return vizsq;  
     }
      
-     public Posicion2D VerticeSupDer (Rectangulo a)throws FueraDelPlanoExeption{    
+     public Posicion2D VerticeSupDer (Rectangulo a)throws FueraDelPlanoException{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteDerecho(a),a.LimiteDerecho(a));
      return vizsq;  
     }
      
-     public Posicion2D VerticeInfDer (Rectangulo a)throws FueraDelPlanoExeption{    
+     public Posicion2D VerticeInfDer (Rectangulo a)throws FueraDelPlanoException{    
      Posicion2D vizsq;    
      vizsq = new Posicion2D (a.LimiteDerecho(a),a.LimiteInferior(a));
      return vizsq;  
@@ -144,7 +144,7 @@ public class Rectangulo extends Figura2D {
      * @throws Plano.DimensionIncorrectaException
      */
     public void setAncho(double ancho)throws DimensionIncorrectaException {
-        if (ancho<=0){
+        if (ancho>0){
             this.ancho = ancho;
         }
         else{
@@ -164,7 +164,7 @@ public class Rectangulo extends Figura2D {
      * @throws Plano.DimensionIncorrectaException
      */
     public void setAlto(double alto)throws DimensionIncorrectaException {
-        if(alto<=0){
+        if(alto>0){
         this.alto = alto;
         }
         else{

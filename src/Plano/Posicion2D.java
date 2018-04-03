@@ -26,7 +26,7 @@ public class Posicion2D  {
     }
 
     
-    public Posicion2D (double x, double y) throws FueraDelPlanoExeption{
+    public Posicion2D (double x, double y) throws FueraDelPlanoException{
     
      this.setX(x);
      this.setY(y);
@@ -66,12 +66,12 @@ public class Posicion2D  {
     /**
      * @param x the x to set
      */
-    public void setX(double x) throws FueraDelPlanoExeption {
+    public void setX(double x) throws FueraDelPlanoException {
         if (x<=limMaxX && x>=limMinX){
         this.x = x;
         }
         else {
-          throw new FueraDelPlanoExeption("Ingrese un valor entre el limte maximo y minimo");  
+          throw new FueraDelPlanoException("Ingrese un valor entre el limte maximo y minimo");  
         }
     }
 
@@ -85,12 +85,12 @@ public class Posicion2D  {
     /**
      * @param y the y to set
      */
-    public void setY(double y)throws FueraDelPlanoExeption {
+    public void setY(double y)throws FueraDelPlanoException {
          if (y<=limMaxY && y>=limMinY){
         this.y = y;
         }
         else {
-          throw new FueraDelPlanoExeption("Ingrese un valor entre el limte maximo y minimo");  
+          throw new FueraDelPlanoException("Ingrese un valor entre el limte maximo y minimo");  
         }
     }
    

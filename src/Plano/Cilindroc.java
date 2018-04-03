@@ -15,8 +15,7 @@ public class Cilindroc {
     private double largo;
     private double radio;
     
-    public Cilindroc (double radio, double largo){
-    
+    public Cilindroc (double radio, double largo) throws FueraDelPlanoException, DimensionIncorrectaException{
         this.base = new Circulo(radio);
         this.largo = largo;
     }

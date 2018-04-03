@@ -19,7 +19,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
       * @param y  Valor de y en la posicoin de la Figura 2D
      * @throws Plano.FueraDelPlanoExeption
       */
-    public Figura2D (double x, double y) throws FueraDelPlanoExeption{
+    public Figura2D (double x, double y) throws FueraDelPlanoException{
     
         posicion = new Posicion2D (x, y);
     
@@ -30,7 +30,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param dist distancia a mover la figura con respecto a la posicion actual.
      * @throws Plano.FueraDelPlanoExeption
      */   
-         public void MoverArriba (double dist) throws FueraDelPlanoExeption{
+         public void MoverArriba (double dist) throws FueraDelPlanoException{
         this.posicion.setY(this.posicion.getY() + dist);
     }
      /**
@@ -38,7 +38,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param dist distancia a mover la figura con respecto a la posicion actual.
      * @throws Plano.FueraDelPlanoExeption
      */ 
-    public void MoverAbajo (double dist) throws FueraDelPlanoExeption{
+    public void MoverAbajo (double dist) throws FueraDelPlanoException{
         this.posicion.setY(this.posicion.getY() - dist);
     }
      /**
@@ -46,7 +46,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param dist distancia a mover la figura con respecto a la posicion actual.
      * @throws Plano.FueraDelPlanoExeption
      */ 
-    public void MoverDerecha (double dist) throws FueraDelPlanoExeption {
+    public void MoverDerecha (double dist) throws FueraDelPlanoException {
         this.posicion.setX(this.posicion.getX() + dist);
     }
      /**
@@ -54,7 +54,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param dist distancia a mover la figura con respecto a la posicion actual.
      * @throws Plano.FueraDelPlanoExeption
      */ 
-    public void MoverIzquierda (double dist) throws FueraDelPlanoExeption{
+    public void MoverIzquierda (double dist) throws FueraDelPlanoException{
             this.posicion.setX(this.posicion.getX() - dist);
     }
     /**
@@ -63,7 +63,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param distY Distancia a mover el valor y de la posicion de la figura
      * @throws Plano.FueraDelPlanoExeption
      */
-    public void Mover (double distX, double distY)throws FueraDelPlanoExeption{
+    public void Mover (double distX, double distY)throws FueraDelPlanoException{
             this.posicion.setY(this.posicion.getY() + distY);
             this.posicion.setX(this.posicion.getX() + distX);
     }
@@ -71,7 +71,7 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * Mueve la Figura 2D a una nueva posicion.
      * @param pos Nueva posicion del objeto.
      */
-    public void Mover (Posicion2D pos)throws FueraDelPlanoExeption{
+    public void Mover (Posicion2D pos)throws FueraDelPlanoException{
         this.posicion.setY(pos.getY());
         this.posicion.setX(pos.getX());
     }

@@ -12,15 +12,15 @@ package Plano;
 public interface Movil {
     
     
-    public void MoverArriba (double dist) throws FueraDelPlanoExeption;
+    public void MoverArriba (double dist) throws FueraDelPlanoException;
     
-    public void MoverAbajo (double dist) throws FueraDelPlanoExeption;
+    public void MoverAbajo (double dist) throws FueraDelPlanoException;
     
-    public void MoverDerecha (double dist) throws FueraDelPlanoExeption;
+    public void MoverDerecha (double dist) throws FueraDelPlanoException;
     
-    public void MoverIzquierda (double dist) throws FueraDelPlanoExeption;
+    public void MoverIzquierda (double dist) throws FueraDelPlanoException;
     
-    public void Mover (double distX, double distY) throws FueraDelPlanoExeption;
+    public void Mover (double distX, double distY) throws FueraDelPlanoException;
     
-    public void Mover (Posicion2D pos) throws FueraDelPlanoExeption;
+    public void Mover (Posicion2D pos) throws FueraDelPlanoException;
 }

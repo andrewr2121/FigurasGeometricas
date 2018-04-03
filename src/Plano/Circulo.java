@@ -21,11 +21,12 @@ public class Circulo extends Figura2D {
  * 
  * @param radio  Radio del 
      * @throws Plano.FueraDelPlanoExeption 
+     * @throws Plano.DimensionIncorrectaException 
  * 
  */
-    public Circulo (double radio) throws FueraDelPlanoExeption{
-            super(0,0);
-           this.radio = radio;
+    public Circulo (double radio) throws FueraDelPlanoException, DimensionIncorrectaException {
+           super(0,0);
+           this.setRadio(radio);
      }
     /**
      * 
@@ -33,11 +34,12 @@ public class Circulo extends Figura2D {
      * @param x valor que va a tomar x en la posicion del circulo
      * @param y valor que va a tomar y en la posicion del circulo
      * @throws Plano.FueraDelPlanoExeption
+     * @throws Plano.DimensionIncorrectaException
      */
   
-     public Circulo (double radio, double x, double y) throws FueraDelPlanoExeption{
+     public Circulo (double radio, double x, double y) throws FueraDelPlanoException, DimensionIncorrectaException{
      super(x,y);
-     this.radio = radio;
+     this.setRadio(radio);
     }
    
      /**
@@ -89,9 +91,15 @@ public class Circulo extends Figura2D {
 
     /**
      * @param radio the radio to set
+     * @throws Plano.DimensionIncorrectaException
      */
-    public void setRadio(double radio) {
+    public void setRadio(double radio)throws DimensionIncorrectaException {
+       if(radio>0){
         this.radio = radio;
-    }
+        }
+       else {
+           throw new DimensionIncorrectaException("Ingrese un valor mayor a 0");
+       }
+    }  
     
 }
