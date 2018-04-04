@@ -76,7 +76,16 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
         this.posicion.setX(pos.getX());
     }
 
-
+    public void VerificarSiEstaDendroDelPlano()throws FueraDelPlanoException {
+        try{
+            CalcularExtremos();
+        }
+        catch(FueraDelPlanoException ex){
+            System.out.println("La figura se va a mover fuera del plano");
+        }
+    }
+            
+    protected abstract void CalcularExtremos () throws FueraDelPlanoException;
     /**
      * Calcula el Perimetro de la Figura 2D
      * @return un valor double.

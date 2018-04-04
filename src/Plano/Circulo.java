@@ -102,4 +102,15 @@ public class Circulo extends Figura2D {
        }
     }  
     
+        protected void CalcularExtremos()throws FueraDelPlanoException {
+        Posicion2D vsup;
+        Posicion2D vd;
+        Posicion2D vi;
+        Posicion2D vinf;
+        vsup = new Posicion2D (this.posicion.getX(),this.posicion.getY()+this.radio);
+        vd = new Posicion2D(this.posicion.getX()+this.radio,this.posicion.getY());
+        vi = new Posicion2D (this.posicion.getX()-this.radio,this.posicion.getY());
+        vinf = new Posicion2D (this.posicion.getX(),this.posicion.getY()-this.radio);
+    }
+    
 }

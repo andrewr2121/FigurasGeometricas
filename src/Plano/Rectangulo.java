@@ -171,5 +171,19 @@ public class Rectangulo extends Figura2D {
              throw new DimensionIncorrectaException ("Ingrese un valor positivo");
         }
     }
+
+    
+    protected void CalcularExtremos()throws FueraDelPlanoException {
+        Posicion2D vsi;
+        Posicion2D vsd;
+        Posicion2D vii;
+        Posicion2D vid;
+        double a = (ancho/2);
+        double b = (alto/2);
+        vsi = new Posicion2D (this.posicion.getX()-a,this.posicion.getY()+b);
+        vsd = new Posicion2D (this.posicion.getX()+a,this.posicion.getY()+b);
+        vii = new Posicion2D (this.posicion.getX()-a,this.posicion.getY()-b);
+        vid = new Posicion2D (this.posicion.getX()+a,this.posicion.getY()-b);
+    }
     
 }
