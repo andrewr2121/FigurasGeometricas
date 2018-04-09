@@ -135,5 +135,10 @@ public class Triangulo extends Figura2D {
         }
     }
     
+ public double DistanciaPerimetro(Posicion2D a){
+  return 0;
+  }
+ 
+  protected void CalcularExtremos () throws FueraDelPlanoException{}
     
 }

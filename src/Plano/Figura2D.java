@@ -12,7 +12,8 @@ package Plano;
 public abstract class Figura2D extends FiguraGeometrica implements Movil{
     
      public Posicion2D posicion;
-    
+     static int nroOrden=1;
+     public String Id;
      /**
       * 
       * @param x Valor de x en la posicion de la Figura 2D
@@ -22,7 +23,8 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
     public Figura2D (double x, double y) throws FueraDelPlanoException{
     
         posicion = new Posicion2D (x, y);
-    
+        nroOrden++;
+           
     }
     
     /**

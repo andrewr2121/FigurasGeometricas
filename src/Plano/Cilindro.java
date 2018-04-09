@@ -25,10 +25,11 @@ public class Cilindro extends Figura3D{
     }
     
     public double Superficie(){
-    double superficie;
-    Circulo circulo1 = new Circulo (this.radio);
-    superficie = ((circulo1.Perimetro() * this.largo)+(2*circulo1.Superficie()));
-    return superficie;
+    //double superficie;
+    //Circulo circulo1 = new Circulo (this.radio);
+   // superficie = ((circulo1.Perimetro() * this.largo)+(2*circulo1.Superficie()));
+   //return superficie;
+   return 0;
     }
     
     /**
@@ -36,10 +37,11 @@ public class Cilindro extends Figura3D{
      * @return Volumen tipo double
      */
     public double Volumen (){
-        double volumen;
-        Circulo circulo1 = new Circulo (this.radio);
-        volumen = (circulo1.Superficie()*this.largo);
-        return volumen;
+   //     double volumen;
+   //     Circulo circulo1 = new Circulo (this.radio);
+  //      volumen = (circulo1.Superficie()*this.largo);
+    //    return volumen;
+    return 0;
     }
     
 }
