@@ -77,9 +77,16 @@ public class Plano {
     
     public static void main(String[] args) {
      
-    /*   Triangulo triangulo1 = new Triangulo (3,4,5);
-    *    Rectangulo rectangulo1 = new Rectangulo (6,8);
-    *    Circulo circulo1 = new Circulo (6.8);
+    //   Triangulo triangulo1 = new Triangulo (3,4,5);
+       Rectangulo rectangulo1 ; 
+    try{
+            rectangulo1 = new Rectangulo (6,8);
+                System.out.println(rectangulo1.Id);
+        }catch (Exception e){
+        }
+        
+    
+    /*    Circulo circulo1 = new Circulo (6.8);
     *    Paralelepipedo paralelepipedo1 = new Paralelepipedo (6.97, 6.7, 5);
     *    Esfera esfera1 = new Esfera (9.8);
     *    Cilindro cilindro1 = new Cilindro (8.5 , 97);
