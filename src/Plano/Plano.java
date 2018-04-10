@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Plano;
+import java.util.*;
 import java.util.ArrayList;
 import java.lang.Math;
 import java.util.Iterator;
@@ -73,11 +74,48 @@ public class Plano {
             }
         return solapamiento;
     }
+    
+    
+    public ArrayList<Figura2D> OrdenarPorSuperficie (){
+        TreeMap<Double, Figura2D> mapa = new TreeMap<>();
+        for (Figura2D a: figuras){
+            mapa.put(a.Superficie(), a);
+        }
+        ArrayList<Figura2D> figurasordenadas = new ArrayList<>(mapa.values());
+        return figurasordenadas;
+    }
   
+    public ArrayList<Figura2D> OrdenarPorPerimetro (){
+        TreeMap<Double, Figura2D> mapa = new TreeMap<>();
+        for (Figura2D a: figuras){
+            mapa.put(a.Perimetro(), a);
+        }
+        ArrayList<Figura2D> figurasordenadas = new ArrayList<>(mapa.values());
+        return figurasordenadas;
+    }
+    
+    private void ListarFiguras2D(ArrayList<Figura2D> listafiguras){
+          for (Figura2D a: listafiguras){
+          System.out.println(a.Id);
+          }
+    }
+    
+    public void ListarFiguras(){
+        ListarFiguras2D(figuras);
+   }
+    
+    public void ListarFigurasPorPerimetro(){
+       ListarFiguras2D(OrdenarPorPerimetro());
+    }
+    
+        public void ListarFigurasPorSuperficie(){
+       ListarFiguras2D(OrdenarPorSuperficie());
+    }
+    
     
     public static void main(String[] args) {
      
-    //   Triangulo triangulo1 = new Triangulo (3,4,5);
+    //  Triangulo triangulo1 = new Triangulo (3,4,5);
        Rectangulo rectangulo1 ; 
     try{
             rectangulo1 = new Rectangulo (6,8);
