@@ -77,9 +77,9 @@ public class Plano {
     
     
     public ArrayList<Figura2D> OrdenarPorSuperficie (){
-        TreeMap<Double, Figura2D> mapa = new TreeMap<>();
+        TreeMap<String, Figura2D> mapa = new TreeMap<>();
         for (Figura2D a: figuras){
-            mapa.put(a.Superficie(), a);
+            mapa.put(""+a.Superficie()+a.Id+ "", a);
         }
         ArrayList<Figura2D> figurasordenadas = new ArrayList<>(mapa.values());
         return figurasordenadas;

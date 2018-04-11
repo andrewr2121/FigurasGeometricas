@@ -150,7 +150,7 @@ public class Rectangulo extends Figura2D {
             this.ancho = ancho;
         }
         else{
-            throw new  DimensionIncorrectaException ("Ingrese un valor mayor a 0");
+            throw new  DimensionIncorrectaException ("Ingrese un valor de ancho mayor a 0");
         }
     }
 
@@ -170,7 +170,7 @@ public class Rectangulo extends Figura2D {
         this.alto = alto;
         }
         else{
-             throw new DimensionIncorrectaException ("Ingrese un valor positivo");
+             throw new DimensionIncorrectaException ("Ingrese un valor de alto mayor a 0");
         }
     }
 

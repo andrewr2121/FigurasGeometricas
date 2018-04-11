@@ -27,10 +27,12 @@ public class Posicion2D  {
 
     
     public Posicion2D (double x, double y) throws FueraDelPlanoException{
-    
-     this.setX(x);
-     this.setY(y);
-    
+        try{
+            this.setX(x);
+            this.setY(y);
+        }catch (FueraDelPlanoException ex){
+            System.out.println(ex) ;  
+        }
     }
     
     public double Distancia (Posicion2D ab){
@@ -71,7 +73,7 @@ public class Posicion2D  {
         this.x = x;
         }
         else {
-          throw new FueraDelPlanoException("Ingrese un valor entre el limte maximo y minimo");  
+          throw new FueraDelPlanoException("Ingrese un valor de X entre el limte maximo " + limMaxX + "y el valor minimo " + limMinX);  
         }
     }
 

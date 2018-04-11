@@ -12,7 +12,7 @@ package Plano;
 public abstract class Figura2D extends FiguraGeometrica implements Movil{
     
      public Posicion2D posicion;
-     static int nroOrden=1;
+     protected static int nroOrden=1;
      public String Id;
      /**
       * 
@@ -32,8 +32,14 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @param dist distancia a mover la figura con respecto a la posicion actual.
      * @throws Plano.FueraDelPlanoExeption
      */   
-         public void MoverArriba (double dist) throws FueraDelPlanoException{
+    public void MoverArriba (double dist) throws FueraDelPlanoException{
+        try {
         this.posicion.setY(this.posicion.getY() + dist);
+        VerificarSiEstaDentroDelPlano();
+        }catch(FueraDelPlanoException ex){
+            System.out.println("No se puede mover la figura fuera del plano");
+             this.posicion.setY(this.posicion.getY()-dist);
+        }
     }
      /**
      * Mueve la figura para abajo de la posicion actual.
@@ -41,7 +47,13 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @throws Plano.FueraDelPlanoExeption
      */ 
     public void MoverAbajo (double dist) throws FueraDelPlanoException{
-        this.posicion.setY(this.posicion.getY() - dist);
+        try{
+            this.posicion.setY(this.posicion.getY() - dist);
+            VerificarSiEstaDentroDelPlano();
+        }catch(FueraDelPlanoException ex){
+            System.out.println("No se puede mover la figura fuera del plano");
+            this.posicion.setY(this.posicion.getY()+ dist);            
+        }
     }
      /**
      * Mueve la figura para la derecha de la posicion actual.
@@ -49,7 +61,13 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @throws Plano.FueraDelPlanoExeption
      */ 
     public void MoverDerecha (double dist) throws FueraDelPlanoException {
-        this.posicion.setX(this.posicion.getX() + dist);
+        try{
+            this.posicion.setX(this.posicion.getX() + dist);
+            VerificarSiEstaDentroDelPlano();
+        }catch(FueraDelPlanoException ex){
+            System.out.println("No se puede mover la figura fuera del plano");        
+            this.posicion.setX(this.posicion.getX() - dist);
+        }
     }
      /**
      * Mueve la figura para la izquierda de la posicion actual.
@@ -57,7 +75,14 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @throws Plano.FueraDelPlanoExeption
      */ 
     public void MoverIzquierda (double dist) throws FueraDelPlanoException{
-            this.posicion.setX(this.posicion.getX() - dist);
+            try{
+                this.posicion.setX(this.posicion.getX() - dist);
+                VerificarSiEstaDentroDelPlano();
+            }catch(FueraDelPlanoException ex){
+                System.out.println("No se puede mover la figura fuera del plano");        
+                this.posicion.setX(this.posicion.getX() + dist);
+            }
+            
     }
     /**
      * 
@@ -66,19 +91,38 @@ public abstract class Figura2D extends FiguraGeometrica implements Movil{
      * @throws Plano.FueraDelPlanoExeption
      */
     public void Mover (double distX, double distY)throws FueraDelPlanoException{
-            this.posicion.setY(this.posicion.getY() + distY);
-            this.posicion.setX(this.posicion.getX() + distX);
+            double x = this.posicion.getX();
+            double y = this.posicion.getY();
+            try{
+                this.posicion.setY(this.posicion.getY() + distY);
+                this.posicion.setX(this.posicion.getX() + distX);            
+                VerificarSiEstaDentroDelPlano();
+            }catch(FueraDelPlanoException ex){
+                System.out.println("No se puede mover la figura fuera del plano");        
+                this.posicion.setY(y);
+                this.posicion.setX(x); 
+            }
+            
     }
     /**
      * Mueve la Figura 2D a una nueva posicion.
      * @param pos Nueva posicion del objeto.
      */
     public void Mover (Posicion2D pos)throws FueraDelPlanoException{
+        double x = this.posicion.getX();
+        double y = this.posicion.getY();        
+        try{
         this.posicion.setY(pos.getY());
         this.posicion.setX(pos.getX());
+        VerificarSiEstaDentroDelPlano();
+        }catch(FueraDelPlanoException ex){
+            System.out.println("No se puede mover la figura fuera del plano");        
+            this.posicion.setY(y);
+            this.posicion.setX(x);        
+        }
     }
 
-    public void VerificarSiEstaDendroDelPlano()throws FueraDelPlanoException {
+    public void VerificarSiEstaDentroDelPlano()throws FueraDelPlanoException {
         try{
             CalcularExtremos();
         }
