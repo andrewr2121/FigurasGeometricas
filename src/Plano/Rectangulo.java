@@ -25,7 +25,7 @@ public class Rectangulo extends Figura2D {
      */
     public Rectangulo(double ancho, double alto) throws DimensionIncorrectaException, FueraDelPlanoException {
     super(0,0);
-    this.Id= "Rectangulo" + this.nroOrden; 
+    this.Id= "Rectangulo-" + this.nroOrden; 
     this.setAncho(ancho);
     this.setAlto(alto);
     }
@@ -43,7 +43,7 @@ public class Rectangulo extends Figura2D {
     super(x,y);
     this.setAncho(ancho);
     this.setAlto(alto);
-    this.Id= "Rectangulo" + this.nroOrden;
+    this.Id= "Rectangulo-" + this.nroOrden;
     }
     
     @Override

@@ -79,16 +79,16 @@ public class Plano {
     public ArrayList<Figura2D> OrdenarPorSuperficie (){
         TreeMap<String, Figura2D> mapa = new TreeMap<>();
         for (Figura2D a: figuras){
-            mapa.put(""+a.Superficie()+a.Id+ "", a);
+            mapa.put(String.format("%08.3f", a.Superficie())+a.Id, a);
         }
         ArrayList<Figura2D> figurasordenadas = new ArrayList<>(mapa.values());
         return figurasordenadas;
     }
   
     public ArrayList<Figura2D> OrdenarPorPerimetro (){
-        TreeMap<Double, Figura2D> mapa = new TreeMap<>();
+        TreeMap<String, Figura2D> mapa = new TreeMap<>();
         for (Figura2D a: figuras){
-            mapa.put(a.Perimetro(), a);
+            mapa.put(String.format("%08.3f", a.Perimetro())+a.Id, a);
         }
         ArrayList<Figura2D> figurasordenadas = new ArrayList<>(mapa.values());
         return figurasordenadas;
@@ -96,7 +96,7 @@ public class Plano {
     
     private void ListarFiguras2D(ArrayList<Figura2D> listafiguras){
           for (Figura2D a: listafiguras){
-          System.out.println(a.Id);
+          System.out.println(a.Id + " " + a.Superficie() + " " + a.Perimetro() );
           }
     }
     
@@ -105,26 +105,48 @@ public class Plano {
    }
     
     public void ListarFigurasPorPerimetro(){
-       ListarFiguras2D(OrdenarPorPerimetro());
+        System.out.println("Figuras listadas por Perimetro:");
+        ListarFiguras2D(OrdenarPorPerimetro());
     }
     
         public void ListarFigurasPorSuperficie(){
+       System.out.println("Figuras listadas por Superficie:");
        ListarFiguras2D(OrdenarPorSuperficie());
     }
     
     
     public static void main(String[] args) {
-     
+        
+        Plano plano = new Plano();
+        Circulo circulo1;
+        Circulo circulo2;
+        Rectangulo rectangulo1;
+        Rectangulo rectangulo2;
+        try{
+        circulo1 = new Circulo(8);
+        circulo2 = new Circulo(8,10,10);
+        rectangulo1 = new Rectangulo(2,3,5,6);
+        rectangulo2 = new Rectangulo (2,3,10,8);
+        plano.addCirculo(circulo1);
+        plano.addCirculo(circulo2);
+        plano.addRectangulo(rectangulo1);
+        plano.addRectangulo(rectangulo2);
+        }catch (FueraDelPlanoException | DimensionIncorrectaException ex11){                
+        }
+            
+        plano.ListarFigurasPorPerimetro();
+        plano.ListarFigurasPorSuperficie();
+       
+        
     //  Triangulo triangulo1 = new Triangulo (3,4,5);
-       Rectangulo rectangulo1 ; 
+    /*   Rectangulo rectangulo1 ; 
     try{
             rectangulo1 = new Rectangulo (6,8);
                 System.out.println(rectangulo1.Id);
         }catch (Exception e){
         }
-        
-    
-    /*    Circulo circulo1 = new Circulo (6.8);
+     */   
+        /*    Circulo circulo1 = new Circulo (6.8);
     *    Paralelepipedo paralelepipedo1 = new Paralelepipedo (6.97, 6.7, 5);
     *    Esfera esfera1 = new Esfera (9.8);
     *    Cilindro cilindro1 = new Cilindro (8.5 , 97);

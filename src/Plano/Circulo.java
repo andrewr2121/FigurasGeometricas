@@ -26,6 +26,7 @@ public class Circulo extends Figura2D {
  */
     public Circulo (double radio) throws FueraDelPlanoException, DimensionIncorrectaException {
            super(0,0);
+           this.Id= "Circulo-" + this.nroOrden;
            this.setRadio(radio);
      }
     /**
@@ -39,6 +40,7 @@ public class Circulo extends Figura2D {
   
      public Circulo (double radio, double x, double y) throws FueraDelPlanoException, DimensionIncorrectaException{
      super(x,y);
+     this.Id= "Circulo-" + this.nroOrden;
      this.setRadio(radio);
     }
    

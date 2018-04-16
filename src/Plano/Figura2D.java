@@ -12,7 +12,7 @@ package Plano;
 public abstract class Figura2D extends FiguraGeometrica implements Movil{
     
      public Posicion2D posicion;
-     protected static int nroOrden=1;
+     protected static int nroOrden=0;
      public String Id;
      /**
       * 
